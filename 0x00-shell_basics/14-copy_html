@@ -1,2 +1,2 @@
 #!/bin/bash
-rsync -u --exclude='*' --include='*.html' . ../
+find . -name "*.html" -newer ../ -exec cp -u {} ../ \;
