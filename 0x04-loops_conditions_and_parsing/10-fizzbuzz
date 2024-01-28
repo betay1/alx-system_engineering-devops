@@ -1,35 +1,22 @@
 #!/usr/bin/env bash
-# alx school file checker
+# Displays numbers from 1 to 100 in list format.
+# Displays "FizzBuzz" when the number is a multiple of 3 and 5.
+# Displays "Fizz" when the number is a multiple of 3.
+# Displays "Buzz" when the number is a multiple of 5.
+# Otherwise, displays the number.
 
-file="school"
-
-# checks if file exists
-if [ -e "$file" ]; then
-
-	echo "school file exists"
-
-	# checks if file is empty
-	if [ ! -s "$file" ]; then
-	echo "school file is empty"
-
-	# checks if file is a regular file
-	if [ -f "$file" ]; then
-	echo "school is a regular file"
-	fi
-
+for num in {1..100}
+do
+	if (( num % 3 == 0 && num % 5 == 0 ))
+	then
+		echo "FizzBuzz"
+	elif (( num % 3 == 0 ))
+	then
+		echo "Fizz"
+	elif (( num % 5 == 0 ))
+	then
+		echo "Buzz"
 	else
-
-	echo "school file is not empty"
-
-	# checks if file is a regular file
-	if [ -f "$file" ]; then
-	echo "school is a regular file"
-	fi  
-
+		echo "$num"
 	fi
-
-else
-
-	echo "school file does not exist"
-
-fi
+done
